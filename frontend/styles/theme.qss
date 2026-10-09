@@ -1,0 +1,230 @@
+/* frontend/styles/theme.qss
+ *
+ * EV — Dark Futuristic Qt Stylesheet
+ *
+ * Color palette:
+ *   Background:   #0a0a0f  (near-black)
+ *   Surface:      #12121a  (dark card/panel)
+ *   Border:       #1e1e2e  (subtle separator)
+ *   Accent:       #00d4ff  (cyan highlight)
+ *   Accent dim:   #0099bb  (hover state)
+ *   Text primary: #e0e0f0  (near-white)
+ *   Text dim:     #6a6a8a  (muted text)
+ *   User bubble:  #0d2a38  (dark cyan)
+ *   EV bubble:    #14141e  (dark surface)
+ *   Error:        #ff4466  (warning red)
+ */
+
+/* ── Global ───────────────────────────────────────────────── */
+
+* {
+    font-family: "SF Pro Display", "Segoe UI", "Inter", "Roboto", sans-serif;
+    font-size: 14px;
+    color: #e0e0f0;
+}
+
+QMainWindow, QWidget#centralWidget {
+    background-color: #0a0a0f;
+}
+
+QWidget {
+    background-color: transparent;
+}
+
+/* ── Scroll Area ──────────────────────────────────────────── */
+
+QScrollArea {
+    background-color: transparent;
+    border: none;
+}
+
+QScrollBar:vertical {
+    background: #12121a;
+    width: 6px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #2a2a4a;
+    border-radius: 3px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #00d4ff;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* ── Input Area ───────────────────────────────────────────── */
+
+QLineEdit#messageInput {
+    background-color: #12121a;
+    border: 1px solid #1e1e2e;
+    border-radius: 24px;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #e0e0f0;
+    selection-background-color: #00d4ff;
+    selection-color: #0a0a0f;
+}
+
+QLineEdit#messageInput:focus {
+    border: 1px solid #00d4ff;
+    background-color: #14141e;
+}
+
+QLineEdit#messageInput::placeholder {
+    color: #4a4a6a;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+
+QPushButton#sendButton {
+    background-color: #00d4ff;
+    color: #0a0a0f;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 22px;
+    min-width: 70px;
+}
+
+QPushButton#sendButton:hover {
+    background-color: #33ddff;
+}
+
+QPushButton#sendButton:pressed {
+    background-color: #0099bb;
+}
+
+QPushButton#sendButton:disabled {
+    background-color: #1e1e2e;
+    color: #4a4a6a;
+}
+
+QPushButton#micButton {
+    background-color: #12121a;
+    color: #e0e0f0;
+    font-size: 20px;
+    border: 1px solid #1e1e2e;
+    border-radius: 22px;
+    min-width: 44px;
+    max-width: 44px;
+    min-height: 44px;
+    max-height: 44px;
+}
+
+QPushButton#micButton:hover {
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+QPushButton#micButton:checked {
+    background-color: #3a0020;
+    border-color: #ff4466;
+    color: #ff4466;
+}
+
+QPushButton#clearButton {
+    background-color: transparent;
+    color: #4a4a6a;
+    font-size: 12px;
+    border: 1px solid #1e1e2e;
+    border-radius: 14px;
+    padding: 4px 12px;
+}
+
+QPushButton#clearButton:hover {
+    color: #e0e0f0;
+    border-color: #2a2a4a;
+}
+
+/* ── Status Label ─────────────────────────────────────────── */
+
+QLabel#statusLabel {
+    color: #00d4ff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: transparent;
+}
+
+QLabel#statusLabelError {
+    color: #ff4466;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    background: transparent;
+}
+
+/* ── Title bar ────────────────────────────────────────────── */
+
+QLabel#titleLabel {
+    color: #00d4ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    background: transparent;
+}
+
+QLabel#versionLabel {
+    color: #2a2a4a;
+    font-size: 10px;
+    background: transparent;
+}
+
+/* ── Chat Bubbles ─────────────────────────────────────────── */
+
+QFrame#userBubble {
+    background-color: #0d2a38;
+    border: 1px solid #1a4a5e;
+    border-radius: 16px;
+    border-bottom-right-radius: 4px;
+}
+
+QFrame#evBubble {
+    background-color: #14141e;
+    border: 1px solid #1e1e2e;
+    border-radius: 16px;
+    border-bottom-left-radius: 4px;
+}
+
+QLabel#bubbleText {
+    background: transparent;
+    color: #e0e0f0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+QLabel#bubbleSender {
+    background: transparent;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ── Separator / Divider ──────────────────────────────────── */
+
+QFrame[frameShape="4"] {
+    color: #1e1e2e;
+    border: none;
+    background-color: #1e1e2e;
+    max-height: 1px;
+}
+
+/* ── Tool Tips ────────────────────────────────────────────── */
+
+QToolTip {
+    background-color: #14141e;
+    color: #e0e0f0;
+    border: 1px solid #00d4ff;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+}
